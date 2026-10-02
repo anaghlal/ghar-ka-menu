@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b5531a">
+<title>Ghar Ka Menu – Help</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+  main{padding-bottom:40px}
+  h1{font-size:22px;margin:6px 0 4px}
+  h2{margin-top:22px}
+  .toc a{display:inline-block;margin:3px 6px 3px 0}
+  dl{margin:6px 0}dt{font-weight:650;margin-top:10px}dd{margin:2px 0 0 0;color:var(--ink)}
+  dd .mute{display:block}
+  .kbd{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:600}
+  .tip{border-left:3px solid var(--ok);background:var(--chip);padding:8px 10px;border-radius:6px;margin:8px 0;font-size:14px}
+  table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}
+  .back{position:sticky;top:0;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);z-index:2}
+</style>
+</head>
+<body>
+<main>
+<div class="back"><a class="btn" href="./">← Back to the app</a></div>
+<h1>How to use Ghar Ka Menu</h1>
+<p class="mute small">A shared family meal planner. It suggests meals for the next 7 days that match everyone's calorie and protein targets.
+You and Abhilasha can change anything; changes appear on both phones.</p>
+
+<div class="toc small"><a href="#day">A typical day</a><a href="#card">Meal card buttons</a><a href="#today">Today screen</a>
+<a href="#week">Week</a><a href="#shop">Shopping</a><a href="#recipes">Recipes</a><a href="#settings">Settings</a><a href="#faq">FAQ</a></div>
+
+<h2 id="day">A typical day</h2>
+<ol>
+  <li><b>Evening (5 pm):</b> open <b>Today</b>, scroll to <b>“Prep this evening”</b>, and tick off tasks for tomorrow (soak rajma, set curd, marinate, chop vegetables for lunchboxes).</li>
+  <li><b>Next morning:</b> open the day, cook what the cards say. The line <i>“Cook 4 katori for the family”</i> and the side chips (e.g. <i>Phulka · 14</i>) tell you the total quantity.</li>
+  <li><b>Something changed?</b> Tap <span class="kbd">Swap</span> to pick another dish, or <span class="kbd">Skip</span> if you ate out.</li>
+  <li><b>After the meal:</b> tap <span class="kbd">Cooked</span>, then <span class="kbd">Rate</span> to record how each person liked it. This makes future plans better.</li>
+  <li><b>Optional:</b> <span class="kbd">Share on WhatsApp</span> to send the day's menu to the family group.</li>
+</ol>
+
+<h2 id="card">Meal card – what each button does</h2>
+<div class="card">
+  <div class="slot"><span>Lunch · 🔒</span><span class="tiny">by Abhilasha</span></div>
+  <div class="dish">Rajma</div>
+  <div class="small mute">Cook 4 katori for the family · ~40 min</div>
+  <div class="sides"><span class="chip">+ Steamed Rice · 5 katori</span><span class="chip">+ Curd (Dahi) · 3 katori</span></div>
+  <div class="row"><span class="chip">Lunchbox</span><span class="chip ok">Cooked</span></div>
+  <div class="actions"><span class="btn">Swap</span><span class="btn">Cooked</span><span class="btn">Skip</span><span class="btn">Rate</span><span class="btn">Edit portions</span><span class="btn ghost">Lock</span></div>
+</div>
+<dl>
+  <dt><span class="kbd">Dish name</span> (tap it)</dt>
+  <dd>Opens the full recipe: ingredients, method, night-before steps, and <b>“Your kitchen”</b> notes (e.g. use the microwave's <i>Convection</i> or <i>Grill</i> mode instead of an oven).</dd>
+
+  <dt><span class="kbd">Swap</span></dt>
+  <dd>Shows other dishes that fit this meal and today's rules (veg day, weekly fish/chicken limits, time limit, lunchbox). Tap one to replace the dish; portions and sides are recalculated for everyone.
+  You can also search, or type a wish like “something light with paneer” and tap <b>Ask Claude</b> (needs an API key in Settings).
+  <span class="mute small">A swapped dish is automatically <b>locked</b> so it won't be changed by re-planning.</span></dd>
+
+  <dt><span class="kbd">Cooked</span></dt>
+  <dd>Tells the app <b>this meal was actually made</b>. What it does:
+    <ul>
+      <li>Shows a green <b>Cooked</b> tag on the card and a ✓ in the Week view, so the other parent knows it's done.</li>
+      <li><b>Freezes the meal</b> – “Re-plan” will never change a cooked meal.</li>
+      <li>Reminds you to <b>Rate</b> it.</li>
+    </ul>
+    Tap <span class="kbd">Undo cooked</span> if you marked it by mistake.</dd>
+
+  <dt><span class="kbd">Skip</span></dt>
+  <dd>Use when the meal <b>won't be made</b> (eating out, guests, leftovers). What it does:
+    <ul>
+      <li>Removes it from the day's calorie/protein totals.</li>
+      <li>Removes its ingredients from the <b>Shopping</b> list.</li>
+      <li>The card fades and shows a red <b>Skipped</b> tag.</li>
+    </ul>
+    Tap <span class="kbd">Undo skip</span> to bring it back. <span class="mute small">If you'd rather cook something else, use Swap instead.</span></dd>
+
+  <dt><span class="kbd">Rate</span></dt>
+  <dd>For each person choose <b>Loved</b>, <b>OK</b> or <b>Didn't work</b>. All dishes start neutral.
+    <ul>
+      <li><b>Loved</b> → the dish comes up more often.</li>
+      <li><b>Didn't work</b> → it comes up less often.</li>
+      <li>If <b>everyone</b> marks <i>Didn't work</i>, it is never suggested again (you can still choose it from the Recipes tab).</li>
+    </ul>
+    You can rate the kids on their behalf. The number on the button, e.g. <i>Rate (3)</i>, is how many people have rated it.</dd>
+
+  <dt><span class="kbd">Edit portions</span></dt>
+  <dd>Change one person's plate with <b>+ / −</b> (e.g. 3 phulka instead of 4, or ½ katori less rice). Their calories and protein update straight away, and the shopping list follows. Use it when someone is extra hungry or not eating much.</dd>
+
+  <dt><span class="kbd">Lock</span> / <span class="kbd">Unlock</span></dt>
+  <dd>A locked meal (🔒 on the card) is kept as it is when you tap “Re-plan”. Use it for meals you've decided on, e.g. Sunday biryani.</dd>
+
+  <dt><b>Portions for each person</b> (tap to expand)</dt>
+  <dd>What each person should eat: the dish, the sides, and their calories and protein. Red notes are personal adjustments, e.g. <i>“max 1 whole egg; rest egg whites”</i> for Anagh, or <i>“serve before adding ghee”</i>.</dd>
+
+  <dt><b>Tags</b></dt>
+  <dd><span class="chip">Lunchbox</span> packable for school/office lunch ·
+      <span class="chip">Convection</span>/<span class="chip">Grill</span> uses that microwave mode ·
+      <span class="chip">Book</span> recipe from one of the recipe books (others are everyday dishes) ·
+      <b>by Name</b> who last changed it.</dd>
+</dl>
+
+<h2 id="today">Today screen</h2>
+<dl>
+  <dt>Date strip</dt><dd>Tap a day to see it. A <span style="color:var(--ok)">green underline</span> marks the vegetarian day (Thursday).</dd>
+  <dt>Totals (top card)</dt><dd>Each person's calories and protein for the day vs. their target. Bars turn <span style="color:var(--ok)">green</span> when calories are within 10% of target and protein is at least 90% of target. Skipped meals are not counted.</dd>
+  <dt>Prep this evening</dt><dd>Checklist for <b>tomorrow's</b> meals. Ticks are shared, so both phones see what's done.</dd>
+  <dt>Re-plan unlocked meals</dt><dd>Gives fresh suggestions for this day. <b>Locked and cooked meals stay.</b></dd>
+  <dt>Share on WhatsApp</dt><dd>Sends this day's menu as a message (for Son 1 and the family group).</dd>
+</dl>
+<div class="tip">The next 7 days are planned automatically when you open the app. Days already planned aren't changed unless you re-plan them.</div>
+
+<h2 id="week">Week</h2>
+<p>An overview of the next 7 days. Tap a day to open it. <b>Re-plan unlocked</b> refreshes the whole week but keeps locked and cooked meals.</p>
+
+<h2 id="shop">Shopping</h2>
+<p>What to buy for the next 1–7 days (choose at the top), starting from the selected day, grouped by category. Tick items as you buy them; ticks show on both phones.
+<b>Pantry check</b> lists spices and small items to check you have. Quantities are approximate.</p>
+<div class="tip">Ticks belong to the start date. If you pick a different start day, you get a fresh list.</div>
+
+<h2 id="recipes">Recipes</h2>
+<dl>
+  <dt>Search &amp; filters</dt><dd>Search by dish or ingredient. Filters: <i>everyday</i> (home staples), <i>book</i> (your recipe books), <i>custom</i> (added by you), or by meal.</dd>
+  <dt>Recipe page</dt><dd>Full recipe, nutrition per portion, what it goes with, ratings, and <b>Use for breakfast/lunch/…</b> to put it on the selected day.</dd>
+  <dt>Add recipe</dt><dd>Paste a recipe (WhatsApp, website, or family style) and tap <b>Structure with Claude</b>. Claude fills in the meal type, sides, nutrition and steps; check it and save. Without an API key, fill in the basics yourself. New recipes are shared with the family and can appear in plans.</dd>
+</dl>
+
+<h2 id="settings">Settings</h2>
+<table>
+  <tr><th>Setting</th><th>What it's for</th></tr>
+  <tr><td>Who is using this phone</td><td>Labels your changes and ratings (“by Anagh”).</td></tr>
+  <tr><td>Sign in &amp; sync</td><td>Connects to the shared Google Drive folder. The dot at the top right shows status: <b>● synced</b>, <b>◌ syncing</b>, <b>○ offline</b> (changes are kept on the phone and sent later), <b>● sync error</b> (tap it to retry).</td></tr>
+  <tr><td>Load / upload data files</td><td>Only after recipes are rebuilt on the laptop: choose <i>recipes.json</i> and <i>config.json</i>.</td></tr>
+  <tr><td>Anthropic API key &amp; model</td><td>Optional. Turns on <i>Ask Claude</i> in Swap and <i>Structure with Claude</i> in Add recipe. The key stays on this phone only.</td></tr>
+  <tr><td>Weekly limits</td><td>Most times per week for fish, chicken, mutton or paneer at lunch/dinner, egg breakfasts, and “exotic” dishes with hard-to-find ingredients. Applies to new and re-planned meals.</td></tr>
+  <tr><td>Re-plan next 7 days</td><td>Fresh suggestions for every unlocked, uncooked meal.</td></tr>
+  <tr><td>Download backup</td><td>Saves the plan, ratings and your recipes as one file.</td></tr>
+</table>
+
+<h2 id="faq">FAQ</h2>
+<dl>
+  <dt>I swapped a dish but it changed back.</dt><dd>Both phones edited the same meal at nearly the same time; the later edit wins. Swap again. It stays, because swapped meals are locked.</dd>
+  <dt>Why so many phulkas/katoris for Son 1?</dt><dd>Portions are sized to each person's daily target. Use <b>Edit portions</b> to adjust for one meal. If it's always too much, the targets can be changed on the laptop (family_input.json).</dd>
+  <dt>A dish uses an oven / air fryer.</dt><dd>Open the recipe: the <b>Your kitchen</b> box says which microwave mode (Convection, Grill, Combi, Slim Fry) or gas-hob method to use instead.</dd>
+  <dt>Why no fish this week?</dt><dd>Weekly limits allow fish once a week. Change it in Settings → Weekly limits.</dd>
+  <dt>Sweets and desserts don't appear.</dt><dd>The family plan avoids added sugar, because Anagh's diet is zero-sugar.</dd>
+  <dt>The app works without internet?</dt><dd>Yes, with what was last synced. Changes are saved on the phone and sent to Drive when you're back online.</dd>
+</dl>
+<p class="tiny mute">Nutrition values come from the recipe books where given, otherwise standard Indian food tables; targets are general estimates, not medical advice.</p>
+</main>
+</body>
+</html>

@@ -118,7 +118,7 @@ function render() {
   document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === st.tab));
   const v = $("#view");
   if (!st.engine && st.tab !== "settings") {
-    v.innerHTML = `<div class="empty"><p><b>Welcome!</b></p><p>Connect Google Drive or load the data files to start.</p>
+    v.innerHTML = `<div class="empty"><p><b>Welcome!</b></p><p>Connect Google Drive or load the data files to start. <a href="help.html">How it works</a></p>
       <button class="btn pri" data-act="tab" data-tab="settings">Open Settings</button></div>`; return;
   }
   ({ today: renderToday, week: renderWeek, shop: renderShop, recipes: renderRecipes, settings: renderSettings })[st.tab](v);
@@ -267,7 +267,7 @@ function renderSettings(v) {
   <div class="card"><div class="slot">Data</div><div class="actions">
     <button class="btn" data-act="plan-week">Re-plan next ${CONF.PLAN_DAYS} days (unlocked)</button>
     <button class="btn" data-act="backup">Download backup</button></div></div>
-  <p class="tiny mute">Ghar Ka Menu · v2 · ${st.recipes.length} recipes</p>`;
+  <p><a class="btn" href="help.html">Open the user manual</a></p><p class="tiny mute">Ghar Ka Menu · v2 · ${st.recipes.length} recipes</p>`;
 }
 
 // ---------------- sheets
